@@ -1,22 +1,19 @@
-#-------------------------------------------------
-#
-# Project created by QtCreator 2018-01-29T11:38:06
-#
-#-------------------------------------------------
-
-QT       += core gui
-
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
-
-TARGET = project_qtpart
 TEMPLATE = app
 
+QT += qml quick widgets
 
-SOURCES += main.cpp\
-        mainwindow.cpp
+SOURCES += main.cpp
 
-HEADERS  += mainwindow.h \
-    simplescroll.h
+RESOURCES += qml.qrc \
+    icons.qrc
+
+# Additional import path used to resolve QML modules in Qt Creator's code model
+QML_IMPORT_PATH =
+
+# Default rules for deployment.
+include(deployment.pri)
 
 DISTFILES += \
+    ../../../下载/setting.png \
     README.md
+
