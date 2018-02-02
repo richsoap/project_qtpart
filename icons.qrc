@@ -2,5 +2,11 @@
     <qresource prefix="/icon">
         <file>icons/setting.png</file>
         <file>icons/date.png</file>
+        <file>icons/back.png</file>
+        <file>icons/SDCard.png</file>
+        <file>icons/restart.png</file>
+        <file>icons/POWER.png</file>
+        <file>icons/wifi.png</file>
+        <file>icons/time.png</file>
     </qresource>
 </RCC>

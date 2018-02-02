@@ -1,6 +1,8 @@
 <RCC>
     <qresource prefix="/">
-        <file>main.qml</file>
+        <file>SearchActivity.qml</file>
         <file>SearchBar.qml</file>
+        <file>main.qml</file>
+        <file>SettingActivity.qml</file>
     </qresource>
 </RCC>

@@ -2,7 +2,8 @@ TEMPLATE = app
 
 QT += qml quick widgets
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    dataswapper.cpp
 
 RESOURCES += qml.qrc \
     icons.qrc
@@ -16,4 +17,7 @@ include(deployment.pri)
 DISTFILES += \
     ../../../下载/setting.png \
     README.md
+
+HEADERS += \
+    dataswapper.h
 

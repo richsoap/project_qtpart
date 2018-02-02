@@ -20,14 +20,12 @@ For the big project.
 - [ ] 和其他进程的通信
 - [ ] 新开线程实现和讯飞或百度的语音识别API交互
 - [ ] 新开线程进行数据库查询
-#### Activity的管理hoster
-- [ ] Hoster:给出唯一标识码新建Activity的能力
-- [ ] Hoster:暂存不同数据类型Intent的能力
-- [ ] 在item中添加静态Hoster::Kind关键字是否能完成不同页面的识别
-- [x] 多开窗口只需新建engine即可
+#### Service
+- [ ] 计时及获得系统时间的后台程序
 #### Activity
+- [x] 时间显示及查找方式选择主界面
 - [ ] Wifi链接界面
-- [ ] setting界面
+- [x] setting界面(但还没有决定具体的ButtonStyle)
 - [ ] 存储管理界面
 - [ ] 时间设置界面(是否可考虑使用网络时钟)
 - [x] 主搜索界面
