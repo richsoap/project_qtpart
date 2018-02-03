@@ -4,5 +4,6 @@
         <file>SearchBar.qml</file>
         <file>main.qml</file>
         <file>SettingActivity.qml</file>
+        <file>PoweroffActivity.qml</file>
     </qresource>
 </RCC>

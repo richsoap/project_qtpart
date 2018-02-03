@@ -8,6 +8,23 @@ ApplicationWindow {
     width: Screen.width
     height: Screen.height
 
+    Component {
+        ButtonStyle {
+            id: itemStyle
+            background: Rectangle {
+                implicitWidth: 100
+                implicitHeight: 25
+                border.width: control.activeFocus ? 2 : 1
+                border.color: "#888"
+                radius: 4
+                gradient: Gradient {
+                   GradientStop { position: 0 ; color: control.pressed ? "#ccc" : "#eee" }
+                   GradientStop { position: 1 ; color: control.pressed ? "#aaa" : "#ccc" }
+                }
+            }
+        }
+    }
+
     Rectangle {
         id: title
         anchors.top: parent.top
@@ -42,31 +59,6 @@ ApplicationWindow {
             }
         }
     }
-  /*  Rectangle {
-        id: storageRec
-        anchors.top: title.bottom
-        anchors.margins: 5
-        anchors.horizontalCenter: parent.horizontalCenter
-        width: parent.width
-        height: 100
-        border.width: 2
-        Image {
-            id:storageImg
-            anchors.left: parent.left
-            anchors.verticalCenter: parent.verticalCenter
-            width: parent.height * 0.7
-            height: width
-            source: "qrc:/icon/icons/SDCard.png"
-        }
-        Text {
-            id: storageText
-            anchors.left: storageImg.right
-            anchors.leftMargin: backbutton.leftMargin
-            anchors.verticalCenter: parent.verticalCenter
-            text: "Storage"
-            font.pixelSize: parent.height *0.8
-        }
-    }*/
     Button {
         id: storageButton
         width:parent.width
@@ -75,19 +67,7 @@ ApplicationWindow {
         iconSource: "urc:/icon/icons/SDCard.png"
         anchors.top: title.bottom
         anchors.horizontalCenter: parent.horizontalCenter
-        style: ButtonStyle {
-                background: Rectangle {
-                    implicitWidth: 100
-                    implicitHeight: 25
-                    border.width: control.activeFocus ? 2 : 1
-                    border.color: "#888"
-                    radius: 4
-                    gradient: Gradient {
-                        GradientStop { position: 0 ; color: control.pressed ? "#ccc" : "#eee" }
-                        GradientStop { position: 1 ; color: control.pressed ? "#aaa" : "#ccc" }
-                    }
-                }
-            }
+
     }
 
     Rectangle {
@@ -147,7 +127,23 @@ ApplicationWindow {
         anchors.horizontalCenter: parent.horizontalCenter
         width: 400
         height: 150
-        text: "Poweroff"
+        style: ButtonStyle {
+                background: Rectangle {
+                    id: poweroffBackground
+                    implicitWidth: 100
+                    implicitHeight: 25
+                    border.width: control.activeFocus ? 2 : 1
+                    border.color: "#ccc"
+                    color: control.pressed? "#000" : "#f00"
+                    radius: 4
+                    Text {
+                        text: "Poweroff"
+                        font.pixelSize: 80
+                        color: "#fff"
+                        anchors.centerIn: parent
+                    }
+                }
+            }
     }
 
 }

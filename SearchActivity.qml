@@ -10,6 +10,7 @@ ApplicationWindow {
     title: qsTr("Hello World")
     //flags: Qt.Window | Qt.FramelessWindowHint
 
+
     Image {
         id: backButton
         source: "qrc:/icon/icons/back.png"
