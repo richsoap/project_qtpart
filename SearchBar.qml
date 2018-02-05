@@ -15,7 +15,7 @@ Item {
         height: 26
 
         TextInput {
-            width: parent.width - dateSearch.width - 22
+            width: parent.width - 22
             height: parent.height - 4
             id: putinText
             anchors.left: parent.left

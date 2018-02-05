@@ -4,121 +4,93 @@ import QtQuick.Window 2.0
 import QtQuick.Controls.Styles 1.4
 ApplicationWindow {
     id:root
-    visible: true
+    visible: false
     width: Screen.width
     height: Screen.height
 
-    Component {
-        ButtonStyle {
-            id: itemStyle
-            background: Rectangle {
-                implicitWidth: 100
-                implicitHeight: 25
-                border.width: control.activeFocus ? 2 : 1
-                border.color: "#888"
-                radius: 4
-                gradient: Gradient {
-                   GradientStop { position: 0 ; color: control.pressed ? "#ccc" : "#eee" }
-                   GradientStop { position: 1 ; color: control.pressed ? "#aaa" : "#ccc" }
-                }
-            }
-        }
+    CommonButton {
+        id: commonButton
     }
 
-    Rectangle {
+    TitleBar {
         id: title
-        anchors.top: parent.top
-        anchors.horizontalCenter: parent.horizontalCenter
-        width: parent.width
-        height: 70
-        color: "gray"
-        Image {
-            id: backbutton
-            width:parent.height * 0.7
-            height:width
-            anchors.left: parent.left
-            anchors.leftMargin: 30
-            anchors.verticalCenter: parent.verticalCenter
-            source: 'qrc:/icon/icons/back.png'
-        }
-        Text {
-            id:titleText
-            anchors.left: backbutton.right
-            anchors.verticalCenter: parent.verticalCenter
-            font.pixelSize: parent.height * 0.8
-            text: "Setting"
-            color: "black"
-        }
-        MouseArea {
-            id:backArea
-            anchors.centerIn: backbutton
-            width:backbutton.width
-            height:backbutton.height
-            onClicked: {
-                root.close()
-            }
-        }
+        theroot: root
+        titleText: "Setting"
     }
+
     Button {
         id: storageButton
         width:parent.width
         height:100
-        text: "Storage"
-        iconSource: "urc:/icon/icons/SDCard.png"
         anchors.top: title.bottom
         anchors.horizontalCenter: parent.horizontalCenter
-
+        style: CommonButton {
+            iconsize: storageIcon.width
+            lefttext: "wifi"
+        }
+        Image {
+            id: storageIcon
+            height: parent.height * 0.8
+            width: height
+            anchors.left: parent.left
+            anchors.verticalCenter: parent.verticalCenter
+            source: "qrc:/icon/icons/SDCard.png"
+        }
+        StorageActivity {
+            id: storageActivity
+        }
+        onClicked: {
+            storageActivity.refresh()
+            storageActivity.show()
+        }
     }
-
-    Rectangle {
-        id: wifiRec
-        //anchors.top: storageRec.bottom
+    Button {
+        id: wifiButton
+        width:parent.width
+        height:100
         anchors.top: storageButton.bottom
         anchors.horizontalCenter: parent.horizontalCenter
-        width: parent.width
-        height: 100
-        border.width: 2
         Image {
-            id:wifiImg
+            id: wifiIcon
+            height: parent.height * 0.8
+            width: height
             anchors.left: parent.left
             anchors.verticalCenter: parent.verticalCenter
-            width: parent.height * 0.7
-            height: width
             source: "qrc:/icon/icons/wifi.png"
         }
-        Text {
-            id: wifiText
-            anchors.left: wifiImg.right
-            anchors.leftMargin: backbutton.leftMargin
-            anchors.verticalCenter: parent.verticalCenter
-            text: "Wifi"
-            font.pixelSize: parent.height *0.8
+        style: CommonButton {
+            iconsize: wifiIcon.width
+            lefttext: "Wifi"
         }
     }
-    Rectangle {
-        id: timeRec
-        anchors.top: wifiRec.bottom
+    Button {
+        id: timeButton
+        width:parent.width
+        height:100
+        anchors.top: wifiButton.bottom
         anchors.horizontalCenter: parent.horizontalCenter
-        width: parent.width
-        height: 100
-        border.width: 2
+        style: CommonButton {
+            lefttext: "TimeSetting"
+            iconsize: timeIcon.width
+        }
         Image {
-            id:timeImg
+            id: timeIcon
+            height: parent.height * 0.8
+            width: height
             anchors.left: parent.left
             anchors.verticalCenter: parent.verticalCenter
-            width: parent.height * 0.7
-            height: width
             source: "qrc:/icon/icons/time.png"
         }
-        Text {
-            id: timeText
-            anchors.left: timeImg.right
-            anchors.leftMargin: backbutton.leftMargin
-            anchors.verticalCenter: parent.verticalCenter
-            text: "Time"
-            font.pixelSize: parent.height *0.8
+        TimeSettingActivity {
+            id: timeSettingActivity
+        }
+
+        onClicked: {
+            timeSettingActivity.show()
         }
     }
+
+
 
     Button {
         id:poweroffButtom
@@ -144,6 +116,13 @@ ApplicationWindow {
                     }
                 }
             }
+        PoweroffActivity {
+            id: poweroffActivity
+        }
+
+        onClicked: {
+            poweroffActivity.show()
+        }
     }
 
 }

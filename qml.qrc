@@ -5,5 +5,11 @@
         <file>main.qml</file>
         <file>SettingActivity.qml</file>
         <file>PoweroffActivity.qml</file>
+        <file>StorageActivity.qml</file>
+        <file>TitleBar.qml</file>
+        <file>TimeSettingActivity.qml</file>
+        <file>CommonButton.qml</file>
+        <file>SetDateActivity.qml</file>
+        <file>SetTimeActivity.qml</file>
     </qresource>
 </RCC>

@@ -35,7 +35,6 @@ ApplicationWindow {
                 }
             SearchActivity {
                 id: searchActivity
-                visible: false
             }
             onClicked: {
                 searchActivity.show()
@@ -85,7 +84,6 @@ ApplicationWindow {
         anchors.bottomMargin: 20
         SettingActivity {
             id: settingActivity
-            visible: false
         }
 
         MouseArea {

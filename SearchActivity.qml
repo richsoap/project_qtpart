@@ -4,7 +4,7 @@ import QtQuick.Window 2.0
 
 ApplicationWindow {
     id:root
-    visible: true
+    visible: false
     width: Screen.width
     height: Screen.height
     title: qsTr("Hello World")

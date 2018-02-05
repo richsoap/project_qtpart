@@ -8,5 +8,6 @@
         <file>icons/POWER.png</file>
         <file>icons/wifi.png</file>
         <file>icons/time.png</file>
+        <file>icons/ok.png</file>
     </qresource>
 </RCC>
