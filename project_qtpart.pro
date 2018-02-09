@@ -21,4 +21,3 @@ DISTFILES += \
 
 HEADERS += \
     dataswapper.h
-

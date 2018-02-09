@@ -3,6 +3,7 @@ import QtQuick.Controls 1.2
 import QtQuick.Window 2.0
 import QtCharts 2.2
 import QtQuick.Controls.Styles 1.4
+import user.DataSwapper 1.0
 
 ApplicationWindow {
     id:root
@@ -13,7 +14,7 @@ ApplicationWindow {
     TitleBar {
         id: title
         theroot: root
-        titleText: "SetFromDate"
+        titleText: "SetToDate"
         Image {
             id: nextbutton
             width: parent.height * 0.7
@@ -28,16 +29,32 @@ ApplicationWindow {
             anchors.centerIn: nextbutton
             width: nextbutton.width
             height: nextbutton.height
+            DateSearchActivity {
+                id: dateSearchActivity
+            }
+
             onClicked: {
-                root.close()
+                var selectFromDate = calender.selectedDate;
+                dataSwapper.setFromDate(selectFromDate);
+                root.close();
+                dateSearchActivity.updateTitleText();
+                dateSearchActivity.show();
             }
         }
     }
+    DataSwapper {
+        id: dataSwapper
+    }
+
     Calendar {
         id: calender
         anchors.top: title.bottom
         anchors.horizontalCenter: parent.horizontalCenter
         width: parent.width
         height: parent.height - title.height
+    }
+    function setDate() {
+        var selectToDate = calender.selectedDate;
+        dataSwapper.setToDate(selectToDate);
     }
 }

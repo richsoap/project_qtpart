@@ -14,7 +14,6 @@ ApplicationWindow {
         id: title
         theroot: root
         titleText: "SetDate"
-        //nextButtonSource: 'qrc:/icon/icons/ok.png'
     }
     Text {
         id: divider

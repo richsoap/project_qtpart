@@ -3,6 +3,7 @@ import QtQuick.Controls 1.2
 import QtQuick.Window 2.0
 import QtCharts 2.2
 import QtQuick.Controls.Styles 1.4
+import user.DataSwapper 1.0
 
 ApplicationWindow {
     id:root
@@ -23,16 +24,26 @@ ApplicationWindow {
             anchors.verticalCenter: parent.verticalCenter
             source: 'qrc:/icon/icons/ok.png'
         }
+        SetToDateActivity {
+            id: setToDateActivity
+        }
         MouseArea {
             id: nextArea
             anchors.centerIn: nextbutton
             width: nextbutton.width
             height: nextbutton.height
             onClicked: {
-                root.close()
+                var selectFromDate = calender.selectedDate;
+                dataSwapper.setFromDate(selectFromDate);
+                root.close();
+                setToDateActivity.show();
             }
         }
     }
+    DataSwapper {
+        id: dataSwapper
+    }
+
     Calendar {
         id: calender
         anchors.top: title.bottom
@@ -40,4 +51,5 @@ ApplicationWindow {
         width: parent.width
         height: parent.height - title.height
     }
+
 }

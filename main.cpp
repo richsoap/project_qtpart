@@ -3,8 +3,11 @@
 #include "dataswapper.h"
 #include <QtQml>
 #include <vector>
-std::vector<int> DataSwapper::startIntents = std::vector<int>(11);
-std::vector<int> DataSwapper::returnIntents = std::vector<int>(11);
+#include <QDate>
+
+QDate DataSwapper::fromDate = QDate::currentDate();
+QDate DataSwapper::toDate = fromDate;
+QString DataSwapper::keyWords = "please putin";
 
 int main(int argc, char *argv[])
 {

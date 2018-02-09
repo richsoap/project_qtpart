@@ -48,6 +48,13 @@ ApplicationWindow {
             text: "Date"
             anchors.left: anch.right
             anchors.top: parent.top
+
+            SetFromDateActivity {
+                id: fromDateActivity
+            }
+            onClicked: {
+                fromDateActivity.show()
+            }
             style: ButtonStyle {
                     background: Rectangle {
                         implicitWidth: 100

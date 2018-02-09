@@ -11,5 +11,8 @@
         <file>CommonButton.qml</file>
         <file>SetDateActivity.qml</file>
         <file>SetTimeActivity.qml</file>
+        <file>SetFromDateActivity.qml</file>
+        <file>SetToDateActivity.qml</file>
+        <file>DateSearchActivity.qml</file>
     </qresource>
 </RCC>

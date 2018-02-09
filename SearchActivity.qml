@@ -33,6 +33,5 @@ ApplicationWindow {
     SearchBar {
         anchors.centerIn: parent
     }
-
 }
 

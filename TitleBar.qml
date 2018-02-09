@@ -3,8 +3,6 @@ import QtQuick 2.0
 Rectangle {
     property var theroot
     property string titleText: "Test"
-    property string nextButtonSource
-    property var nextButtonOnClick
     anchors.top: theroot.top
     anchors.horizontalCenter: theroot.horizontalCenter
     height: 70
@@ -19,20 +17,11 @@ Rectangle {
         anchors.verticalCenter: parent.verticalCenter
         source: 'qrc:/icon/icons/back.png'
     }
-    Image {
-        id: nextbutton
-        width: parent.height * 0.7
-        height:width
-        anchors.right: parent.right
-        anchors.rightMargin: 30
-        anchors.verticalCenter: parent.verticalCenter
-        source: nextButtonSouce
-    }
     Text {
-        id:titleText
+        id:titleTxt
         anchors.centerIn: parent
         font.pixelSize: parent.height * 0.8
-        text: "Setting"
+        text: titleText
         color: "black"
     }
     MouseArea {
@@ -43,12 +32,5 @@ Rectangle {
         onClicked: {
             theroot.close()
         }
-    }
-    MouseArea {
-        id: nextArea
-        anchors.centerIn: nextbutton
-        width: nextbutton.width
-        height: nextbutton.height
-        onClicked: nextButtonOnClick
     }
 }
