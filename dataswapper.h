@@ -20,9 +20,16 @@ public:
     Q_INVOKABLE static QString getKeyWords();
     Q_INVOKABLE static QString getDateTitle();
 
+    Q_INVOKABLE static void searchData();
+    Q_INVOKABLE static int getIndex();
+    Q_INVOKABLE static QString getDate();
+    Q_INVOKABLE static QString getDetail();
+    Q_INVOKABLE static QString getSrc();
+
 
     static QDate fromDate,toDate;
     static QString keyWords;
+    static int counter;
 
 };
 

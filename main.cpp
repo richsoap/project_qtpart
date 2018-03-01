@@ -8,6 +8,7 @@
 QDate DataSwapper::fromDate = QDate::currentDate();
 QDate DataSwapper::toDate = fromDate;
 QString DataSwapper::keyWords = "please putin";
+int DataSwapper::counter = 0;
 
 int main(int argc, char *argv[])
 {

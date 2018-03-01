@@ -34,4 +34,45 @@ QString DataSwapper::getDateTitle() {
     qDebug() << fromDate.toString("yy.MM.dd") + "---" + toDate.toString("yy.MM.dd");
     return fromDate.toString("yy.MM.dd") + "---" + toDate.toString("yy.MM.dd");
 }
+void DataSwapper::searchData() {
+    counter = 0;
+}
+
+int DataSwapper::getIndex() {
+    return counter++;
+}
+
+QString DataSwapper::getDate() {
+    if(counter > 18) {
+        return NULL;
+    }
+    else if(counter & 1) {
+        return "2018.5.8";
+    }
+    else {
+        return "2018.2.2";
+    }
+}
+QString DataSwapper::getDetail() {
+    if(counter > 18) {
+        return NULL;
+    }
+    else if(counter & 1) {
+        return "ffff222";
+    }
+    else {
+        return "dddd555";
+    }
+}
+QString DataSwapper::getSrc() {
+    if(counter > 18) {
+        return NULL;
+    }
+    else if(counter & 1) {
+        return QString("file:///home/richsoap/Workspaces/project_qtpart/testimgs/1.png");
+    }
+    else {
+        return QString("file:///home/richsoap/Workspaces/project_qtpart/testimgs/2.jpeg");
+    }
+}
 

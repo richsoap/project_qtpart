@@ -14,5 +14,6 @@
         <file>SetFromDateActivity.qml</file>
         <file>SetToDateActivity.qml</file>
         <file>DateSearchActivity.qml</file>
+        <file>SearchResultActivity.qml</file>
     </qresource>
 </RCC>

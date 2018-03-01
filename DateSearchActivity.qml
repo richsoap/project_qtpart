@@ -25,7 +25,7 @@ ApplicationWindow {
         height: title.height
         width: parent.width * 0.6
         onClicked: {
-
+            root.close();
         }
     }
 

@@ -2,6 +2,7 @@ import QtQuick 2.0
 import QtQuick.Controls 1.2
 import QtQuick.Window 2.0
 import QtQuick.Controls.Styles 1.4
+import user.DataSwapper 1.0
 Item {
     id: root;
     width: 360;
@@ -42,11 +43,19 @@ Item {
             text: "Search"
             color: "white"
         }
+        SearchResultActivity {
+            id: searchResultActivity;
+        }
+        DataSwapper {
+            id:dataSwapper;
+        }
 
         MouseArea {
-            anchors.fill: parent
+            anchors.fill: parent;
             onClicked: {
-                searchButton.text = putinText.getText(0,100)
+                dataSwapper.setKeyWords(putinText.getText(0,100));
+                searchResultActivity.updateTitleText();
+                searchResultActivity.show();
             }
         }
     }

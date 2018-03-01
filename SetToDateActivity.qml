@@ -10,6 +10,7 @@ ApplicationWindow {
     visible: false
     width: Screen.width
     height: Screen.height
+    property var fromData
 
     TitleBar {
         id: title

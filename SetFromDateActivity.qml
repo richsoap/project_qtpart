@@ -51,5 +51,8 @@ ApplicationWindow {
         width: parent.width
         height: parent.height - title.height
     }
+    Component.onCompleted: {
+        setToDateActivity.fromData = root;
+    }
 
 }
