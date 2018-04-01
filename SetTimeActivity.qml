@@ -4,15 +4,12 @@ import QtQuick.Window 2.0
 import QtCharts 2.2
 import QtQuick.Controls.Styles 1.4
 
-ApplicationWindow {
+Item {
     id:root
-    visible: false
-    width: Screen.width
-    height: Screen.height
+    anchors.fill: parent
 
     TitleBar {
         id: title
-        theroot: root
         titleText: "SetDate"
     }
     Text {

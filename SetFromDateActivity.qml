@@ -5,15 +5,12 @@ import QtCharts 2.2
 import QtQuick.Controls.Styles 1.4
 import user.DataSwapper 1.0
 
-ApplicationWindow {
+Item {
     id:root
-    visible: false
-    width: Screen.width
-    height: Screen.height
+    anchors.fill: parent
 
     TitleBar {
         id: title
-        theroot: root
         titleText: "SetFromDate"
         Image {
             id: nextbutton
@@ -24,9 +21,6 @@ ApplicationWindow {
             anchors.verticalCenter: parent.verticalCenter
             source: 'qrc:/icon/icons/ok.png'
         }
-        SetToDateActivity {
-            id: setToDateActivity
-        }
         MouseArea {
             id: nextArea
             anchors.centerIn: nextbutton
@@ -35,8 +29,7 @@ ApplicationWindow {
             onClicked: {
                 var selectFromDate = calender.selectedDate;
                 dataSwapper.setFromDate(selectFromDate);
-                root.close();
-                setToDateActivity.show();
+                manager.showPage("SetToDateActivity.qml");
             }
         }
     }
@@ -50,9 +43,6 @@ ApplicationWindow {
         anchors.horizontalCenter: parent.horizontalCenter
         width: parent.width
         height: parent.height - title.height
-    }
-    Component.onCompleted: {
-        setToDateActivity.fromData = root;
     }
 
 }

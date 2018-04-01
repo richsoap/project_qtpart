@@ -3,15 +3,13 @@ import QtQuick.Controls 1.2
 import QtQuick.Window 2.0
 import QtCharts 2.2
 
-ApplicationWindow {
+Item {
     id:root
-    visible: false
-    width: Screen.width
-    height: Screen.height
+    anchors.fill: parent
+    function init() {}
 
     TitleBar {
         id:title
-        theroot: root
         titleText: "Storage"
     }
 
@@ -39,7 +37,7 @@ ApplicationWindow {
             PieSlice {
                 id: videoSlice
                 label: "Video"
-                value: 15
+                value: 10
                 onClicked: {
                     exploded = true;
                     voidSlice.exploded = false;
@@ -50,7 +48,7 @@ ApplicationWindow {
             PieSlice {
                 id: databaseSlice
                 label: "DataBase"
-                value: 7
+                value: 10
                 onClicked: {
                     exploded = true;
                     videoSlice.exploded = false;
@@ -72,6 +70,10 @@ ApplicationWindow {
             font.pixelSize: 20
         }
     }
+    Component.onCompleted: {
+
+    }
+
     function refresh() {
         pieSeries.find("Void").value = pieSeries.find("Void").value + 2;
         pieSeries.find("Void").exploded = true;

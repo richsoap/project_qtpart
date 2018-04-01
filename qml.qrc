@@ -2,7 +2,7 @@
     <qresource prefix="/">
         <file>SearchActivity.qml</file>
         <file>SearchBar.qml</file>
-        <file>main.qml</file>
+        <file>MainActivity.qml</file>
         <file>SettingActivity.qml</file>
         <file>PoweroffActivity.qml</file>
         <file>StorageActivity.qml</file>
@@ -15,5 +15,10 @@
         <file>SetToDateActivity.qml</file>
         <file>DateSearchActivity.qml</file>
         <file>SearchResultActivity.qml</file>
+        <file>DetailActivity.qml</file>
+        <file>ResultList.qml</file>
+        <file>ResultListWorkerScript.js</file>
+        <file>Manager.qml</file>
+        <file>main.qml</file>
     </qresource>
 </RCC>

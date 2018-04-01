@@ -17,7 +17,6 @@ ApplicationWindow {
 
     TitleBar {
         id: title
-        theroot: root
         titleText: "SetFromDate"
     }
     MouseArea {

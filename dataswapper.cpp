@@ -34,12 +34,17 @@ QString DataSwapper::getDateTitle() {
     qDebug() << fromDate.toString("yy.MM.dd") + "---" + toDate.toString("yy.MM.dd");
     return fromDate.toString("yy.MM.dd") + "---" + toDate.toString("yy.MM.dd");
 }
+
+
 void DataSwapper::searchData() {
     counter = 0;
 }
 
 int DataSwapper::getIndex() {
-    return counter++;
+    if(counter < 18)
+        return counter++;
+    else
+        return -1;
 }
 
 QString DataSwapper::getDate() {

@@ -2,11 +2,10 @@ import QtQuick 2.3
 import QtQuick.Controls 1.2
 import QtQuick.Window 2.0
 import QtQuick.Controls.Styles 1.4
-ApplicationWindow {
+Item {
     id:root
-    visible: false
-    width: Screen.width
-    height: Screen.height
+    anchors.fill: parent
+    function init() {}
 
     CommonButton {
         id: commonButton
@@ -14,7 +13,6 @@ ApplicationWindow {
 
     TitleBar {
         id: title
-        theroot: root
         titleText: "Setting"
     }
 
@@ -36,12 +34,8 @@ ApplicationWindow {
             anchors.verticalCenter: parent.verticalCenter
             source: "qrc:/icon/icons/SDCard.png"
         }
-        StorageActivity {
-            id: storageActivity
-        }
         onClicked: {
-            storageActivity.refresh()
-            storageActivity.show()
+            manager.showPage("StorageActivity.qml");
         }
     }
     Button {
@@ -81,12 +75,8 @@ ApplicationWindow {
             anchors.verticalCenter: parent.verticalCenter
             source: "qrc:/icon/icons/time.png"
         }
-        TimeSettingActivity {
-            id: timeSettingActivity
-        }
-
         onClicked: {
-            timeSettingActivity.show()
+            manager.showPage("TimeSettingActivity.qml");
         }
     }
 
@@ -116,12 +106,8 @@ ApplicationWindow {
                     }
                 }
             }
-        PoweroffActivity {
-            id: poweroffActivity
-        }
-
         onClicked: {
-            poweroffActivity.show()
+            manager.showPage("PoweroffActivity.qml")
         }
     }
 

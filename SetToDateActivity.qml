@@ -5,16 +5,14 @@ import QtCharts 2.2
 import QtQuick.Controls.Styles 1.4
 import user.DataSwapper 1.0
 
-ApplicationWindow {
+Item {
     id:root
-    visible: false
-    width: Screen.width
-    height: Screen.height
+    visible: true
+    anchors.fill: parent
     property var fromData
 
     TitleBar {
         id: title
-        theroot: root
         titleText: "SetToDate"
         Image {
             id: nextbutton
@@ -37,9 +35,7 @@ ApplicationWindow {
             onClicked: {
                 var selectFromDate = calender.selectedDate;
                 dataSwapper.setFromDate(selectFromDate);
-                root.close();
-                dateSearchActivity.updateTitleText();
-                dateSearchActivity.show();
+                manage.prePage();
             }
         }
     }

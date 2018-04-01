@@ -4,7 +4,8 @@ QT += qml quick widgets
 QT += qml
 
 SOURCES += main.cpp \
-    dataswapper.cpp
+    dataswapper.cpp \
+    storagestate.cpp
 
 RESOURCES += qml.qrc \
     icons.qrc
@@ -20,4 +21,5 @@ DISTFILES += \
     README.md
 
 HEADERS += \
-    dataswapper.h
+    dataswapper.h \
+    storagestate.h

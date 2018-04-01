@@ -1,6 +1,7 @@
 #include <QApplication>
 #include <QQmlApplicationEngine>
 #include "dataswapper.h"
+#include "storagestate.h"
 #include <QtQml>
 #include <vector>
 #include <QDate>
@@ -13,7 +14,7 @@ int DataSwapper::counter = 0;
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
-
+    StorageState.init();
     qmlRegisterType<DataSwapper>("user.DataSwapper",1,0,"DataSwapper");
 
     QQmlApplicationEngine engine1;

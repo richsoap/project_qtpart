@@ -43,9 +43,6 @@ Item {
             text: "Search"
             color: "white"
         }
-        SearchResultActivity {
-            id: searchResultActivity;
-        }
         DataSwapper {
             id:dataSwapper;
         }
@@ -54,8 +51,7 @@ Item {
             anchors.fill: parent;
             onClicked: {
                 dataSwapper.setKeyWords(putinText.getText(0,100));
-                searchResultActivity.updateTitleText();
-                searchResultActivity.show();
+                manager.showPage("SearchResultActivity.qml");
             }
         }
     }

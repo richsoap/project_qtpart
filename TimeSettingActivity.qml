@@ -4,16 +4,13 @@ import QtQuick.Window 2.0
 import QtCharts 2.2
 import QtQuick.Controls.Styles 1.4
 
-ApplicationWindow {
+Item {
     id:root
-    visible: false
-    width: Screen.width
-    height: Screen.height
-    property var usingWeb : true
+    anchors.fill: parent
+    property bool usingWeb : true
 
     TitleBar {
         id: title
-        theroot: root
         titleText: "TimeSetting"
     }
     Button {
@@ -57,11 +54,8 @@ ApplicationWindow {
             anchors.verticalCenter: parent.verticalCenter
             anchors.rightMargin: CommonButton.fontmargin
         }
-        SetDateActivity {
-            id: setDateActivity
-        }
         onClicked: {
-            setDateActivity.show()
+            manager.showPage("SetDateActivity.qml");
         }
 
         anchors.top: fromWeb.bottom
@@ -75,11 +69,8 @@ ApplicationWindow {
         style: CommonButton {
             lefttext: "SelectTime"
         }
-        SetTimeActivity {
-            id: setTimeActivity
-        }
         onClicked: {
-            setTimeActivity.show()
+            manager.showPage("SetTimeActivity.qml");
         }
 
         anchors.top: selectDate.bottom

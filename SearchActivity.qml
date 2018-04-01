@@ -2,15 +2,14 @@ import QtQuick 2.3
 import QtQuick.Controls 1.2
 import QtQuick.Window 2.0
 
-ApplicationWindow {
+Item {
     id:root
-    visible: false
-    width: Screen.width
-    height: Screen.height
-    title: qsTr("Hello World")
+    anchors.fill: parent
     //flags: Qt.Window | Qt.FramelessWindowHint
 
-
+    function init() {
+        print("init in Search");
+    }
     Image {
         id: backButton
         source: "qrc:/icon/icons/back.png"
@@ -26,7 +25,7 @@ ApplicationWindow {
         width: backButton.width
         height: backButton.height
         onClicked: {
-            root.close()
+            manager.prePage();
         }
     }
 

@@ -1,12 +1,11 @@
 import QtQuick 2.0
 
 Rectangle {
-    property var theroot
     property string titleText: "Test"
-    anchors.top: theroot.top
-    anchors.horizontalCenter: theroot.horizontalCenter
+    anchors.top: parent.top
+    anchors.horizontalCenter: parent.horizontalCenter
     height: 70
-    width: theroot.width
+    width: parent.width
     color: "gray"
     Image {
         id: backbutton
@@ -30,7 +29,7 @@ Rectangle {
         width:backbutton.width
         height:backbutton.height
         onClicked: {
-            theroot.close()
+            manager.prePage();
         }
     }
 }

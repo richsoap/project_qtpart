@@ -3,17 +3,18 @@ import QtQuick.Controls 1.2
 import QtQuick.Window 2.0
 import QtQuick.Controls.Styles 1.4
 
-ApplicationWindow {
+Item {
     id:root
-    visible: false
-    width: Screen.width
-    height: Screen.height
-    color: "black"
-    opacity: 0.5
+    anchors.fill: parent
+    Rectangle {
+        color: "black"
+        opacity: 0.5
+        anchors.fill: parent
+    }
     MouseArea {
         anchors.fill: parent
         onClicked: {
-            root.close()
+            manager.prePage();
         }
     }
 

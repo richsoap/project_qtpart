@@ -4,15 +4,15 @@ import QtQuick.Window 2.0
 import QtCharts 2.2
 import QtQuick.Controls.Styles 1.4
 
-ApplicationWindow {
+Item {
     id:root
-    visible: false
-    width: Screen.width
-    height: Screen.height
+    anchors.fill: parent
+    function init() {
+        print("init in Set From");
+    }
 
     TitleBar {
         id: title
-        theroot: root
         titleText: "SetFromDate"
         Image {
             id: nextbutton
@@ -29,7 +29,7 @@ ApplicationWindow {
             width: nextbutton.width
             height: nextbutton.height
             onClicked: {
-                root.close()
+                manager.prePage();
             }
         }
     }
