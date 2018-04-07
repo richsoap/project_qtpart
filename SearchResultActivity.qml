@@ -16,6 +16,7 @@ Item {
     TitleBar {
         id: title
         titleText: "getResult"
+
     }
     MouseArea {
         anchors.centerIn: title

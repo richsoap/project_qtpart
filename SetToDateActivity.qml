@@ -9,7 +9,7 @@ Item {
     id:root
     visible: true
     anchors.fill: parent
-    property var fromData
+    property var toDate
 
     TitleBar {
         id: title
@@ -28,14 +28,10 @@ Item {
             anchors.centerIn: nextbutton
             width: nextbutton.width
             height: nextbutton.height
-            DateSearchActivity {
-                id: dateSearchActivity
-            }
-
             onClicked: {
-                var selectFromDate = calender.selectedDate;
-                dataSwapper.setFromDate(selectFromDate);
-                manage.prePage();
+                var toDate = calender.selectedDate;
+                dataSwapper.setToDate(toDate);
+                manager.showPage("DateSearchResultActivity.qml");
             }
         }
     }

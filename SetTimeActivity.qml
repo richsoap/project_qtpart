@@ -38,6 +38,7 @@ Item {
         anchors.right: divider.left
         anchors.verticalCenter: divider.verticalCenter
         ListView {
+            id:hourList
             anchors.fill: parent
             anchors.margins: 20
             clip: true
@@ -54,6 +55,7 @@ Item {
         anchors.left: divider.right
         anchors.verticalCenter: divider.verticalCenter
         ListView {
+            id:minuteList
             anchors.fill: parent
             anchors.margins: 20
             clip: true
@@ -62,5 +64,9 @@ Item {
             spacing: 5
             snapMode: ListView.SnapToItem
         }
+    }
+    Component.onCompleted: {
+        hourList.positionViewAtIndex(Number(new Date().toLocaleTimeString(Qt.locale(),"hh")), ListView.Center);
+        minuteList.positionViewAtIndex(Number(new Date().toLocaleTimeString(Qt.locale(),"mm")), ListView.Center);
     }
 }

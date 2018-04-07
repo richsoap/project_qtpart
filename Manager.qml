@@ -22,10 +22,17 @@ Item {
     }
 
     function showPage(name) {
-        print(name);
         lastPages.push(name);
         pageLoader.setSource(name);
         __currentIndex = lastPages.length - 1;
+    }
+
+    function popToPage(name) {
+        while(lastPages[lastPages.length-1] != name && lastPages.length !== 1) {
+            lastPages.pop();
+        }
+        pageLoader.setSource(lastPages[lastPages.length-1]);
+        __currentIndex = lastPages.length-1;
     }
 
     Loader {

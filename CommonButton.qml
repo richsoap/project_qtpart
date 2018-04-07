@@ -7,6 +7,7 @@ import QtQuick.Controls.Styles 1.4
         property int fontmargin: 10
         property int iconsize: 0
         property string lefttext: "Name"
+        id: commonButton
         background: Rectangle {
             border.width: 2
             color:control.pressed? "gray" : "white"

@@ -25,6 +25,7 @@ public:
     Q_INVOKABLE static QString getDate();
     Q_INVOKABLE static QString getDetail();
     Q_INVOKABLE static QString getSrc();
+    Q_INVOKABLE static QString getDateWords();
 
 
     static QDate fromDate,toDate;

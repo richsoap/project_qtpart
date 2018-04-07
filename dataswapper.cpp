@@ -81,3 +81,9 @@ QString DataSwapper::getSrc() {
     }
 }
 
+QString DataSwapper::getDateWords() {
+    QString result = fromDate.toString("yy.MM.dd");
+    result.append("-" + toDate.toString("yy.MM.dd"));
+    return result;
+}
+

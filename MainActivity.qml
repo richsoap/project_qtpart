@@ -6,6 +6,7 @@ import "."
 Item{
     anchors.fill: parent
     property var locale: Qt.locale()
+    property int isShow: 1
     function init() {}
 
    Item {
@@ -96,6 +97,8 @@ Item{
         interval: 500;
         running: true;
         repeat: true;
-        onTriggered: timeLabel.text = (new Date().toLocaleTimeString(Qt.locale(),"hh:mm"));
+        onTriggered: {
+            timeLabel.text= (new Date().toLocaleTimeString(Qt.locale(),"hh:mm"));
+        }
     }
 }

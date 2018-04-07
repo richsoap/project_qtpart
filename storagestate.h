@@ -10,21 +10,24 @@ public:
     StorageState(QObject *parent = 0);
     ~StorageState();
 
-    Q_INVOKABLE static void updateState();
-    Q_INVOKABLE static int getIntSize(StorageKind);
-    Q_INVOKABLE static QString getStrSize(StorageKind);
-    Q_INVOKABLE static bool isAvaliable();
-    static void init();
-
     enum StorageKind{
         Empty,
         Used,
         All
     };
+
+    Q_INVOKABLE static void updateState();
+    Q_INVOKABLE static int getIntSize(StorageKind);
+    Q_INVOKABLE static QString getStrSize(StorageKind);
+    static void init();
 private:
-    static int intSize[3];
-    static QString strSize[3];
-    static QProcess dfProcess;
+    static int* intSize;
+    static QString* strSize;
+    static QProcess* dfProcess;
+    static void stdoutProcess();
+    static int sizeTrans(QString);
+signals:
+    void ready2read();
 };
 
 

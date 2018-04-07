@@ -13,12 +13,12 @@
         <file>SetTimeActivity.qml</file>
         <file>SetFromDateActivity.qml</file>
         <file>SetToDateActivity.qml</file>
-        <file>DateSearchActivity.qml</file>
         <file>SearchResultActivity.qml</file>
         <file>DetailActivity.qml</file>
         <file>ResultList.qml</file>
         <file>ResultListWorkerScript.js</file>
         <file>Manager.qml</file>
         <file>main.qml</file>
+        <file>DateSearchResultActivity.qml</file>
     </qresource>
 </RCC>

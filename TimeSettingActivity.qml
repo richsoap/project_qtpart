@@ -18,6 +18,7 @@ Item {
         width: parent.width
         height: 100
         style: CommonButton {
+            id: commonButton
             lefttext: "Using Web Time"
         }
 
@@ -76,38 +77,4 @@ Item {
         anchors.top: selectDate.bottom
         anchors.horizontalCenter: parent.horizontalCenter
     }
-
-   /* Rectangle {
-        width: 80
-        height: 160
-        color: "white"
-        anchors.top: parent.top
-        anchors.horizontalCenter: parent.horizontalCenter
-        ListView {
-            anchors.fill: parent
-            anchors.margins: 20
-            clip: true
-            model: 100
-            orientation: ListView.Vertical
-            delegate: numberDelegate
-            snapMode: ListView.SnapToItem
-            spacing: 5
-        }
-
-        Component {
-            id: numberDelegate
-
-            Rectangle {
-                id: delegateRec
-                width: 40
-                height: 40
-                color: "lightGreen"
-                Text {
-                    anchors.centerIn: parent
-                    font.pixelSize: 10
-                    text: index
-                }
-            }
-        }
-    }*/
 }
